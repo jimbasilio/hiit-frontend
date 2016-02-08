@@ -1,0 +1,25 @@
+<p>You've created the following programs<p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Creation Date</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="program in page.programs">
+      <td>
+        {{program.name}} 
+      </td>
+      <td>
+        {{program.creationDate}}
+      </td>
+      <td>
+        {{program.duration}}
+      </td>
+    </tr>
+  </tbody>
+</table>
+

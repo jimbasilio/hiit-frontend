@@ -1,0 +1,16 @@
+*~
+target/*
+bin/*
+/target
+npm-debug.log
+bower_components
+/target/
+nohup.out
+node_modules
+std-lib
+typings
+app/**/*.js
+app/**/*.map
+jspm_packages
+dist
+**/logs/*

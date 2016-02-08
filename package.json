@@ -1,0 +1,39 @@
+{
+  "name": "resources",
+  "version": "0.0.0",
+  "authors": [
+    "Jim Basilio <jim.basilio@gmail.com>"
+  ],
+  "description": "HIIT bower resources",
+  "license": "MIT",
+  "dependencies": {
+    "angular2": "2.0.0-beta.3",
+    "bootstrap": "4.0.0-alpha.2",
+    "font-awesome": "latest",
+    "satellizer": "latest",
+    "systemjs": "0.19.6",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "zone.js": "0.5.11"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "del": "^2.1.0",
+    "gulp": "^3.9.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^3.6.0",
+    "gulp-typescript": "^2.9.2",
+    "tsconfig-glob": "^0.3.3",
+    "tsd": "^0.6.5",
+    "tslint": "^3.2.1",
+    "typescript": "^1.7.3"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "tslint": "tslint -c tslint.json app/**/*.ts",
+    "postinstall": "tsd install"
+  }   
+}

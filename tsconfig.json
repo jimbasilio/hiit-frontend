@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/app",
+    "target": "es5",
+    "module": "system",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "noImplicitAny": true
+  },
+  "filesGlob": [
+    "app/**/*.ts",
+    "typings/**/*.d.ts"
+  ],
+  "files": [
+    "app/angular2/app.component.ts",
+    "app/angular2/main.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

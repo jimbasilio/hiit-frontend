@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="static/bower_components/font-awesome/css/font-awesome.min.css" />
+    
+    <!-- CSSMINIFY START -->
+    <link rel="stylesheet" type="text/css" href="static/angular_components/css/hiit.css" />
+    <!-- CSSMINIFY END -->
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+
+    <script src="static/npm/lib/node_modules/resources/node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="static/npm/lib/node_modules/resources/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="static/npm/lib/node_modules/resources/node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="static/npm/lib/node_modules/resources/node_modules/angular2/bundles/angular2.dev.js"></script>
+
+
+<!--     <script src="static/bower_components/angular/angular.js" ></script> -->
+<!--     <script src="static/bower_components/angular-route/angular-route.js" ></script> -->
+<!--     <script src="static/bower_components/jquery/dist/jquery.js" ></script> -->
+<!--     <script src="static/bower_components/bootstrap/dist/js/bootstrap.js" ></script> -->
+<!--     <script src="static/bower_components/satellizer/satellizer.js" ></script> -->
+    
+<!--     JSMINIFY START -->
+<!--     <script src="static/angular_components/js/hiit.js" ></script> -->
+<!--     <script src="static/angular_components/js/services/ProgramService.js" ></script> -->
+<!--     <script src="static/angular_components/js/controllers/AboutController.js" ></script> -->
+<!--     <script src="static/angular_components/js/controllers/ContactController.js" ></script> -->
+<!--     <script src="static/angular_components/js/controllers/MainController.js" ></script> -->
+<!--     <script src="static/angular_components/js/controllers/ProgramController.js" ></script> -->
+<!--     JSMINIFY END -->
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+      System.config({
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app/main')
+            .then(null, console.error.bind(console));
+    </script>
+
+  </head>
+
+<meta charset="UTF-8">
+<title>HIIT Timer</title>
+</head>
+<body>
+
+  <!-- HEADER AND NAVBAR -->
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">HIIT IT!</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="#program"><i class="fa fa-save"></i> Programs</a></li>
+          <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+          <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+<!--   <button ng-click="authenticate('google')">Sign in with Google</button> -->
+
+  <div class="col-md-12">
+    <ade-root></ade-root>
+  </div>
+
+</body>
+</html>
