@@ -7,6 +7,9 @@ const tscConfig = require('./tsconfig.json');
 const sourcemaps = require('gulp-sourcemaps');
 const tslint = require('gulp-tslint');
 const tsconfig = require('tsconfig-glob');
+const changedInPlace = require('gulp-changed-in-place');
+const tsfmt = require('gulp-tsfmt');
+const runSequence = require('run-sequence');
 
 // clean the contents of the distribution directory
 gulp.task('clean', function () {
@@ -67,6 +70,45 @@ gulp.task('watch', function() {
     gulp.watch([tscConfig.files], ['buildNoWatch']);
 });
 
-gulp.task('build', ['buildNoWatch', 'watch']);
-gulp.task('buildNoWatch', ['tslint', 'tsconfig-glob', 'compile', 'copy:libs', 'copy:assets']);
+// format typescript
+gulp.task('format', () => {
+  gulp.src('app/**/*.ts' )
+    .pipe(changedInPlace())
+    .pipe(tsfmt(
+        {
+            IndentSize: 4,
+            TabSize: 4,
+            NewLineCharacter: "\n",
+            ConvertTabsToSpaces: true,
+            InsertSpaceAfterCommaDelimiter: true,
+            InsertSpaceAfterSemicolonInForStatements: true,
+            InsertSpaceBeforeAndAfterBinaryOperators: true,
+            InsertSpaceAfterKeywordsInControlFlowStatements: true,
+            InsertSpaceAfterFunctionKeywordForAnonymousFunctions: false,
+            InsertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis: false,
+            PlaceOpenBraceOnNewLineForFunctions: false,
+            PlaceOpenBraceOnNewLineForControlBlocks: false         
+        }
+    ))
+    .pipe(gulp.dest('app'))
+});
+
+// gulp 4.0 will give a better native syntax to accomplish ordering
+// http://stackoverflow.com/a/22826429/640396
+// in gulp3.x all tasks will execute in parallel w/o explicit ordering through runSequence plugin
+// attempting to allow formatter to run prior to running linting (not entirely working, runs 2x)
+gulp.task('build', function() {
+    runSequence('buildNoWatch', 'watch');
+});
+
+gulp.task('buildNoWatch', function() {
+    runSequence('format', 'afterFormat');
+});
+
+gulp.task('afterFormat', ['tslint', 'tsconfig-glob', 'compile'], function() {
+    runSequence('afterLintAndCompile');
+});
+
+gulp.task('afterLintAndCompile', ['copy:libs', 'copy:assets']);
+
 gulp.task('default', ['build']);
