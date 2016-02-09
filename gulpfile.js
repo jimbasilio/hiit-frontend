@@ -7,9 +7,6 @@ const tscConfig = require('./tsconfig.json');
 const sourcemaps = require('gulp-sourcemaps');
 const tslint = require('gulp-tslint');
 const tsconfig = require('tsconfig-glob');
-const changedInPlace = require('gulp-changed-in-place');
-const tsfmt = require('gulp-tsfmt');
-const runSequence = require('run-sequence');
 
 // clean the contents of the distribution directory
 gulp.task('clean', function () {
@@ -41,6 +38,12 @@ gulp.task('copy:libs', ['clean'], function() {
     .pipe(gulp.dest('dist/lib'))
 });
 
+// font-awesome fonts
+gulp.task('icons', ['clean'], function() {
+    return gulp.src('node_modules/font-awesome/fonts/**.*')
+        .pipe(gulp.dest('dist/fonts'));
+});
+
 // linting
 gulp.task('tslint', function() {
   return gulp.src('app/**/*.ts')
@@ -67,18 +70,6 @@ gulp.task('tsconfig-glob', function () {
   });
 });
 
-// setup watch for file changes to trigger recomplication
-gulp.task('watch', function() {
-    gulp.watch([tscConfig.files], ['buildNoWatch']);
-});
-
-// gulp 4.0 will give a better native syntax to accomplish ordering
-// http://stackoverflow.com/a/22826429/640396
-// in gulp3.x all tasks will execute in parallel w/o explicit ordering through runSequence plugin
-gulp.task('build', function() {
-    runSequence('buildNoWatch');
-});
-
-gulp.task('buildNoWatch', ['tslint', 'tsconfig-glob', 'compile', 'copy:libs', 'copy:assets']);
+gulp.task('build', ['tslint', 'tsconfig-glob', 'compile', 'copy:libs', 'icons', 'copy:assets']);
 
 gulp.task('default', ['build']);
