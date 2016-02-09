@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
-    <link rel="stylesheet" type="text/css" href="static/bower_components/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="lib/font-awesome.css" />
     
-    <!-- CSSMINIFY START -->
-    <link rel="stylesheet" type="text/css" href="static/angular_components/css/hiit.css" />
-    <!-- CSSMINIFY END -->
+    <link rel="stylesheet" type="text/css" href="css/hiit.css" />
 
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
-    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+    <script src="lib/es6-shim.js"></script>
+    <script src="lib/system-polyfills.js"></script>
 
-    <script src="static/npm/lib/node_modules/resources/node_modules/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="static/npm/lib/node_modules/resources/node_modules/systemjs/dist/system.src.js"></script>
-    <script src="static/npm/lib/node_modules/resources/node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="static/npm/lib/node_modules/resources/node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="lib/angular2-polyfills.js"></script>
+    <script src="lib/system.src.js"></script>
+    <script src="lib/Rx.js"></script>
+    <script src="lib/angular2.dev.js"></script>
 
 
 <!--     <script src="static/bower_components/angular/angular.js" ></script> -->
@@ -57,7 +54,7 @@
 <body>
 
   <!-- HEADER AND NAVBAR -->
-  <header>
+  <!--<header>
     <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
@@ -73,11 +70,12 @@
       </div>
     </nav>
   </header>
+  -->
 
 <!--   <button ng-click="authenticate('google')">Sign in with Google</button> -->
 
   <div class="col-md-12">
-    <ade-root></ade-root>
+    <hiit></hiit>
   </div>
 
 </body>

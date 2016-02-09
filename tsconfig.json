@@ -15,8 +15,8 @@
     "typings/**/*.d.ts"
   ],
   "files": [
-    "app/angular2/components/main/app.component.ts",
-    "app/angular2/main.ts"
+    "app/app/components/main/app.component.ts",
+    "app/app/main.ts"
   ],
   "exclude": [
     "node_modules"

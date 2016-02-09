@@ -26,6 +26,8 @@ gulp.task('copy:assets', ['clean'], function() {
 gulp.task('copy:libs', ['clean'], function() {
   return gulp.src([
       'node_modules/angular2/bundles/angular2-polyfills.js',
+      'node_modules/es6-shim/es6-shim.js',
+      'node_modules/systemjs/dist/system-polyfills.js',
       'node_modules/bootstrap/dist/css/bootstrap.css',
       'node_modules/bootstrap/dist/js/bootstrap.js',
       'node_modules/font-awesome/css/font-awesome.css',
@@ -54,7 +56,7 @@ gulp.task('compile', ['clean'], function () {
     .pipe(sourcemaps.init())
     .pipe(typescript(tscConfig.compilerOptions))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/angular2'));
+    .pipe(gulp.dest('dist/app'));
 });
 
 // update the tsconfig files based on the glob pattern
@@ -74,7 +76,7 @@ gulp.task('watch', function() {
 // http://stackoverflow.com/a/22826429/640396
 // in gulp3.x all tasks will execute in parallel w/o explicit ordering through runSequence plugin
 gulp.task('build', function() {
-    runSequence('buildNoWatch', 'watch');
+    runSequence('buildNoWatch');
 });
 
 gulp.task('buildNoWatch', ['tslint', 'tsconfig-glob', 'compile', 'copy:libs', 'copy:assets']);
