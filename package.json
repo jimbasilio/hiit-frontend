@@ -37,6 +37,7 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "tslint": "tslint -c tslint.json app/**/*.ts",
-    "postinstall": "tsd install"
+    "postinstall": "tsd install",
+    "build": "gulp buildNoWatch"
   }   
 }
