@@ -36,7 +36,7 @@
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "tslint": "tslint -c tslint.json app/**/*.ts",
+    "tslint": "tslint -c tslint.json src/**/*.ts",
     "postinstall": "tsd install",
     "build": "gulp buildNoWatch"
   }   

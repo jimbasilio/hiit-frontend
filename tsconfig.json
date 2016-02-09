@@ -11,12 +11,12 @@
     "noImplicitAny": true
   },
   "filesGlob": [
-    "app/**/*.ts",
+    "src/**/*.ts",
     "typings/**/*.d.ts"
   ],
   "files": [
-    "app/app/components/main/app.component.ts",
-    "app/app/main.ts"
+    "src/app/components/main/app.component.ts",
+    "src/app/main.ts"
   ],
   "exclude": [
     "node_modules"

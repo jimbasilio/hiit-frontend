@@ -13,9 +13,9 @@ gulp.task('clean', function () {
   return del('dist/**/*');
 });
 
-// copy static assets to dist directory - i.e. non TypeScript compiled source
+// copy static assets to dist directory
 gulp.task('copy:assets', ['clean'], function() {
-  return gulp.src(['app/static/**/*', '!app/**/*.ts'])
+  return gulp.src(['src/static/**/*'])
     .pipe(gulp.dest('dist'))
 });
 
