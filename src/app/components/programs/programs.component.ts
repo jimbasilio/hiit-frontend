@@ -11,7 +11,7 @@ import {Program} from '../../models/program.model'
 })
 
 export class ProgramsComponent implements OnInit {
-    programs: Program[];
+    public programs: Program[];
     
     constructor(private programService: ProgramService) { 
     }

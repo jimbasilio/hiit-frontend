@@ -2,7 +2,7 @@ import {Component} from 'angular2/core';
 import {RouteConfig} from 'angular2/router';
 
 @Component({
-    templateUrl: 'templates/about.html'
+    templateUrl: 'templates/contact.html'
 })
 
 export class ContactComponent {

@@ -1,3 +1,6 @@
-<p>{{programtext}}</p>
-
-<router-outlet></router-outlet>
+<h1>Your Programs</h1>
+<ul>
+    <li *ngFor="#program of programs">
+        <span class="badge">{{program.name}}</span>
+    </li>
+</ul>
