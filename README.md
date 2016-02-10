@@ -19,3 +19,10 @@ This starts the docker apache container which will serve the app.
     
 Open browser to http://localhost:8080
 
+#HTML5 Note
+
+Due to a currently discussed [default feature](https://github.com/angular/angular/issues/4735) being discussed by the angualr team, html5 routign is the default. This gives benefits, but the primary issue is lack of ability for direct links w/o configuring the web server to handle this.
+
+Based on this [stack overflow](http://stackoverflow.com/questions/22739455/htaccess-redirect-for-angular-routes) answer I've created a htaccess file used to build my apache docker image with proper server redirection.
+
+

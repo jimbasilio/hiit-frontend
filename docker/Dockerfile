@@ -30,8 +30,10 @@ MAINTAINER Jim Basilio <jim.basilio@gmail.com>
 # Root commands
 USER root
 
-RUN apt-get update \
-    && apt-get -y  --force-yes install vim
+# httpd.conf turns on rewrite module and also allows overrides to 
+# /usr/local/apache2/htdocs in order to allow htaccess support
+COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
+COPY ./htaccess /usr/share/htdocs/.htaccess
 
 # Define default command to start bash. 
 CMD [ "httpd-foreground" ]
