@@ -1,6 +1,6 @@
 {
   "name": "resources",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "authors": [
     "Jim Basilio <jim.basilio@gmail.com>"
   ],
@@ -19,7 +19,6 @@
     "zone.js": "0.5.11"
   },
   "devDependencies": {
-    "browser-sync": "^2.10.0",
     "del": "^2.1.0",
     "gulp": "^3.9.0",
     "gulp-sourcemaps": "^1.6.0",
@@ -28,16 +27,9 @@
     "tsconfig-glob": "^0.3.3",
     "tsd": "^0.6.5",
     "tslint": "^3.2.1",
-    "typescript": "^1.7.3",
-    "gulp-tsfmt": "^1.0.2",
-    "gulp-changed-in-place": "^2.0.3",
-    "run-sequence": "^1.1.5"
+    "typescript": "^1.7.3"
   },
   "scripts": {
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "tslint": "tslint -c tslint.json src/**/*.ts",
-    "postinstall": "tsd install",
     "build": "gulp buildNoWatch"
   }   
 }

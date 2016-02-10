@@ -15,8 +15,13 @@
     "typings/**/*.d.ts"
   ],
   "files": [
-    "src/app/components/main/app.component.ts",
-    "src/app/main.ts"
+    "src/app/components/about/about.component.ts",
+    "src/app/components/contact/contact.component.ts",
+    "src/app/components/home/home.component.ts",
+    "src/app/components/programs/programs.component.ts",
+    "src/app/main.ts",
+    "src/app/models/program.model.ts",
+    "src/app/services/program.service.ts"
   ],
   "exclude": [
     "node_modules"

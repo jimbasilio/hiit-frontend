@@ -23,6 +23,7 @@ gulp.task('copy:assets', ['clean'], function() {
 gulp.task('copy:libs', ['clean'], function() {
   return gulp.src([
       'node_modules/angular2/bundles/angular2-polyfills.js',
+      'node_modules/angular2/bundles/router.js',
       'node_modules/es6-shim/es6-shim.js',
       'node_modules/systemjs/dist/system-polyfills.js',
       'node_modules/bootstrap/dist/css/bootstrap.css',

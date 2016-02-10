@@ -1,0 +1,33 @@
+<!-- HEADER AND NAVBAR -->
+<header>
+    
+<nav class="navbar navbar-light bg-faded">
+<a class="navbar-brand" href="/">HIIT IT!</a>
+<ul class="nav navbar-nav">
+    <li class="nav-item">
+    <a [routerLink]="['Home']" class="nav-link"><i class="fa fa-home"></i>Home</a>
+    </li>
+    <li class="nav-item">
+    <a [routerLink]="['Programs']" class="nav-link"><i class="fa fa-save"></i>Programs</a>
+    </li>
+    <li class="nav-item">
+    <a [routerLink]="['About']" class="nav-link"><i class="fa fa-shield"></i>About</a>
+    </li>
+    <li class="nav-item">
+    <a [routerLink]="['Contact']" class="nav-link"><i class="fa fa-comment"></i>Contact</a>
+    </li>
+</ul>
+<form class="form-inline pull-xs-right" style="display:none;">
+    <input class="form-control" type="text" placeholder="Search">
+    <button class="btn btn-success-outline" type="submit">Search</button>
+</form>
+</nav>      
+
+</header>
+
+<!--   <button ng-click="authenticate('google')">Sign in with Google</button> -->
+
+
+<!-- <p>Welcome back, {{page.username}}!</p> -->
+
+<router-outlet></router-outlet>
