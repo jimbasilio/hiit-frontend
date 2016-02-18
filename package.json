@@ -30,6 +30,6 @@
     "typescript": "^1.7.3"
   },
   "scripts": {
-    "build": "gulp buildNoWatch"
+    "build": "gulp build"
   }   
 }
