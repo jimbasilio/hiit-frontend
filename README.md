@@ -4,20 +4,17 @@ NOTE: Google's ["hero"](http://plnkr.co/edit/?p=preview) angular2 app is helpful
 
 #Steps to run
 
+##Run build.sh. This will install all required node_modules
+
+    ./build.sh
+
 ##Start Apache docker container
 
-    cd docker
-    ./build.sh
-    ./start.sh
+    ./apache.sh
 
 This starts the docker apache container which will serve the app.
 
-##Start the angular app
-
-    <from root of git repo>
-    gulp build
-    
-Open browser to http://localhost:8080
+##Open browser to http://localhost:8080
 
 #HTML5 Note
 
